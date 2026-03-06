@@ -16,9 +16,9 @@ Built a two-router topology to demonstrate Layer 3 routing between separate LANs
 * Validated packet flow using ping and tracert
 
 ## Screenshots
-<img width="834" height="488" alt="network topology" src="https://github.com/user-attachments/assets/ed6377b5-97ee-4247-8886-668384970ded" />
-<img width="695" height="703" alt="LA dhcp" src="https://github.com/user-attachments/assets/c07a441f-e315-42ca-9b4d-5a614bc30145" />
-<img width="695" height="698" alt="LA router config" src="https://github.com/user-attachments/assets/1b73d3d9-5885-4d0a-ae7a-5a29b8e5fe0c" />
-<img width="692" height="699" alt="newyork dhcp" src="https://github.com/user-attachments/assets/fce3e735-8782-4f5e-a256-b386b362ddbf" />
-<img width="689" height="702" alt="newyork router config" src="https://github.com/user-attachments/assets/15c7165e-1286-4040-a70f-c65b2fa95db8" />
-<img width="690" height="701" alt="ping tracert test" src="https://github.com/user-attachments/assets/c73faa4a-a6b1-41c7-905f-320f98c45857" />
+<img width="834" height="488" alt="network topology" src="https://github.com/user-attachments/assets/28f25f8b-bbc6-4dcc-81a1-50459da115f7" />
+<img width="695" height="703" alt="LA dhcp" src="https://github.com/user-attachments/assets/2093063b-7eab-434e-935c-6d27a17882d5" />
+<img width="695" height="698" alt="LA router config" src="https://github.com/user-attachments/assets/c1edfc5d-002f-45ec-81fa-21252285ddf6" />
+<img width="692" height="699" alt="newyork dhcp" src="https://github.com/user-attachments/assets/69825fcd-dc41-421e-9abc-cde98e117bc9" />
+<img width="689" height="702" alt="newyork router config" src="https://github.com/user-attachments/assets/4b1740bc-0d20-490c-8b94-7e33c52f6174" />
+<img width="690" height="701" alt="ping tracert test" src="https://github.com/user-attachments/assets/d549d07e-410d-4d58-ae09-ae4c365a3858" />
