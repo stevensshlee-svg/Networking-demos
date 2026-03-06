@@ -16,8 +16,8 @@ Implemented VLAN-based network segmentation and enabled communication between VL
 * Verified inter-VLAN communication
   
 ## Screenshot
-<img width="628" height="551" alt="network topology" src="https://github.com/user-attachments/assets/9fbc24e5-0a48-4c64-b9ee-7b2d72762e27" />
-<img width="677" height="307" alt="vlans" src="https://github.com/user-attachments/assets/a8227e6a-bc8c-4f98-8c7e-2c70f99ff68c" />
-<img width="696" height="706" alt="switchport configs" src="https://github.com/user-attachments/assets/aa521f36-07c2-4786-88a5-e865e7a21c94" />
-<img width="696" height="671" alt="router subinterfaces" src="https://github.com/user-attachments/assets/80139064-6a92-4267-a9d8-8ddbb6fd20b6" />
-<img width="693" height="701" alt="test ping" src="https://github.com/user-attachments/assets/83822dae-603e-4384-80fd-efaca6223f55" />
+<img width="628" height="551" alt="network topology" src="https://github.com/user-attachments/assets/49a10131-462c-4932-8803-06c6de2e553e" />
+<img width="677" height="307" alt="vlans" src="https://github.com/user-attachments/assets/bde93174-a319-4224-9fa9-374a3d9f70b5" />
+<img width="696" height="706" alt="switchport configs" src="https://github.com/user-attachments/assets/a7bac350-ce21-42e5-98f5-4d74acbac8d9" />
+<img width="696" height="671" alt="router subinterfaces" src="https://github.com/user-attachments/assets/97ac3a82-5db4-4cab-a903-75f19afa28cf" />
+<img width="693" height="701" alt="test ping" src="https://github.com/user-attachments/assets/92b79a94-32f9-4ea3-8dea-5f63447ce048" />
