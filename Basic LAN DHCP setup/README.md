@@ -23,9 +23,9 @@ Configurations
 * Confirmed connectivity via ping tests
 
 ## Screenshots
-<img width="652" height="556" alt="basic-lan-dhcp-config" src="https://github.com/user-attachments/assets/632e5d02-a661-43f3-9cbc-9005a0b4002d" />
-<img width="689" height="693" alt="dhcp-config" src="https://github.com/user-attachments/assets/66a3abdb-db2c-4548-a90e-cf37dc390ecb" />
-<img width="682" height="679" alt="pc0 config" src="https://github.com/user-attachments/assets/af670681-3962-4c41-ae37-4eac0081976b" />
-<img width="696" height="701" alt="pc1 config" src="https://github.com/user-attachments/assets/1190a031-0dc8-4b71-9908-2ab1f8e84e45" />
-<img width="694" height="707" alt="pc2 config" src="https://github.com/user-attachments/assets/6f979193-22d9-400c-812c-f432f5b332ef" />
-<img width="808" height="761" alt="ping" src="https://github.com/user-attachments/assets/49a79d74-3c7c-4ec0-8a6f-809c7708db8d" />
+<img width="652" height="556" alt="basic-lan-dhcp-config" src="https://github.com/user-attachments/assets/238f13cc-6301-4b6f-baad-6e75557f3ff9" />
+<img width="689" height="693" alt="dhcp-config" src="https://github.com/user-attachments/assets/1ba09657-43b2-457d-abb5-9d50df7e09c1" />
+<img width="682" height="679" alt="pc0 config" src="https://github.com/user-attachments/assets/b242aead-ac9d-4dd6-9115-65a530af84e2" />
+<img width="696" height="701" alt="pc1 config" src="https://github.com/user-attachments/assets/73355d8b-3d0f-46b4-b3aa-803880ee8c34" />
+<img width="694" height="707" alt="pc2 config" src="https://github.com/user-attachments/assets/7919cdab-8992-404c-aac8-ff3158bbafbc" />
+<img width="808" height="761" alt="ping" src="https://github.com/user-attachments/assets/b8bae843-8a10-42bc-ae15-b7026383c86d" />
