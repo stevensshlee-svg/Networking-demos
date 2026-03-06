@@ -32,18 +32,18 @@ Simulated an simple enterprise network topology using a Layer-3 switch for inter
 * Verified name resolution across VLAN boundaries
 
 ## Screenshots
-<img width="852" height="594" alt="network topology" src="https://github.com/user-attachments/assets/56b35bfa-27aa-4468-b997-db21847c3777" />
-<img width="686" height="706" alt="svi" src="https://github.com/user-attachments/assets/d19e2c84-7de0-497a-92b9-aba927ba1be9" />
-<img width="690" height="693" alt="switchport config" src="https://github.com/user-attachments/assets/216649d4-1856-4ae1-a40e-70e2efc3f8f8" />
-<img width="691" height="704" alt="dhcp pool config" src="https://github.com/user-attachments/assets/6189a786-0d7b-4366-b5f3-4c91e4a19eb7" />
-<img width="692" height="704" alt="int config + static routes" src="https://github.com/user-attachments/assets/dd524088-a578-44c5-aaae-9b71a71802f0" />
-<img width="693" height="707" alt="user1 ip lease" src="https://github.com/user-attachments/assets/70d76c80-d428-4b18-81d9-88fd626fc624" />
-<img width="694" height="706" alt="user1 gateway and dns" src="https://github.com/user-attachments/assets/790eaaf8-c469-4e00-961e-497c1b3ea22b" />
-<img width="692" height="694" alt="it1 ip lease" src="https://github.com/user-attachments/assets/82f0e59f-f695-47fd-bed3-64e60f20bafd" />
-<img width="686" height="701" alt="it1 dateway and dns" src="https://github.com/user-attachments/assets/05188f25-5fae-43c4-bdac-5202e0673c2b" />
-<img width="688" height="705" alt="user2 ip lease" src="https://github.com/user-attachments/assets/95b1df01-2f78-4de4-a232-4546c5717a00" />
-<img width="692" height="702" alt="user2 gateway and dns" src="https://github.com/user-attachments/assets/4d79914e-35cd-4dee-b4fb-1363ceab1adf" />
-<img width="688" height="695" alt="it2 ip lease" src="https://github.com/user-attachments/assets/2c8d0896-2813-4a08-828d-b379326710c1" />
-<img width="691" height="702" alt="it2 gateway and dns" src="https://github.com/user-attachments/assets/4115de48-8927-423c-94e2-71bd5a0dd92d" />
-<img width="695" height="706" alt="a record" src="https://github.com/user-attachments/assets/1f070144-38eb-4292-9d8d-bb2c5f2ab067" />
-<img width="691" height="704" alt="inter-vlan name resolution" src="https://github.com/user-attachments/assets/e6354979-fb78-4b13-b444-052b0515bbc0" />
+<img width="852" height="594" alt="network topology" src="https://github.com/user-attachments/assets/b541c2e1-df9f-49aa-a5c7-fb9171a02905" />
+<img width="686" height="706" alt="svi" src="https://github.com/user-attachments/assets/b06c5a03-8f8b-4e66-b2cf-645f30c8223e" />
+<img width="690" height="693" alt="switchport config" src="https://github.com/user-attachments/assets/a6b31220-7c9e-42a9-9695-691d6279d987" />
+<img width="691" height="704" alt="dhcp pool config" src="https://github.com/user-attachments/assets/5afb615f-cdf9-4513-9f21-a538ac28f942" />
+<img width="692" height="704" alt="int config + static routes" src="https://github.com/user-attachments/assets/5fef52c7-81fb-44f4-8fbe-07c79058e0b4" />
+<img width="693" height="707" alt="user1 ip lease" src="https://github.com/user-attachments/assets/c26a2060-3bc7-4495-8a74-0ced92210fcc" />
+<img width="694" height="706" alt="user1 gateway and dns" src="https://github.com/user-attachments/assets/3f70bd92-88a4-4042-a6db-309af976bd88" />
+<img width="692" height="694" alt="it1 ip lease" src="https://github.com/user-attachments/assets/9da5e1e6-0a97-4a46-a3f0-65289a29c8d3" />
+<img width="686" height="701" alt="it1 dateway and dns" src="https://github.com/user-attachments/assets/7f4b8405-5679-4461-9c7f-2fef19f821a7" />
+<img width="688" height="705" alt="user2 ip lease" src="https://github.com/user-attachments/assets/4cc3c05e-70a5-4004-8438-7a5e64da9641" />
+<img width="692" height="702" alt="user2 gateway and dns" src="https://github.com/user-attachments/assets/516df385-121d-49a1-8fba-9c2f0d126c0d" />
+<img width="688" height="695" alt="it2 ip lease" src="https://github.com/user-attachments/assets/862918cf-b250-468b-9ec0-d7ad5ea7efbe" />
+<img width="691" height="702" alt="it2 gateway and dns" src="https://github.com/user-attachments/assets/96cdada8-2292-4ced-8827-9f37054a9340" />
+<img width="695" height="706" alt="a record" src="https://github.com/user-attachments/assets/99cee89a-9e81-4c76-acab-ac08609e44f3" />
+<img width="691" height="704" alt="inter-vlan name resolution" src="https://github.com/user-attachments/assets/b32d0edd-c595-4e78-bb1c-5933b02cb70c" />
