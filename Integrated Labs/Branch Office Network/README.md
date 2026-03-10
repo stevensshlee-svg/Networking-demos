@@ -44,14 +44,3 @@ The HQ router acts as the network edge and performs NAT overload (PAT) to allow 
 Private address ranges from the branch VLANs are translated to the public address assigned to the HQ router's Internet interface.
 
 This allows hosts from either branch to reach the simulated external network while keeping internal IP addressing private.
-
-
-
-
-
-
-
-
-
-
-
