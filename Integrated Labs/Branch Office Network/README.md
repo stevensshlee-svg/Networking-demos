@@ -66,3 +66,27 @@ Dynamic routing with OSPF:
 
 Centralized NAT at HQ:
 * Instead of performing NAT at each branch, NAT is handled at the HQ router. This mirrors how many organizations design their networks, where branches use private addressing internally and internet access is routed through a central edge device. Centralizing NAT also simplifies management and allows all outbound traffic to be monitored or filtered at a single point.
+
+Layer 3 switching at the branch:
+* Inter-VLAN routing is performed by Layer 3 switches at each branch instead of the routers. This keeps local traffic within the branch and prevents unnecessary routing across the WAN. It also reflects how many enterprise networks operate, where distribution or access layer switches handle local routing for internal VLANs.
+
+## Troubleshooting challenges encountered
+While building the topology, several issues came up that required troubleshooting.
+
+DHCP clients receiving APIPA addresses:
+* Initially hosts were receiving 169.254.x.x addresses. This was caused by missing routing between the branch router and the Layer 3 switch where the VLAN interfaces were configured. Once the proper routes were added, DHCP requests were successfully forwarded to the router.
+
+OSPF adjacency dropping:
+* After configuring NAT on the HQ router, the OSPF neighbor relationship between routers dropped and the dead timer eventually expired. This was caused by accidentally applying the ACL used for NAT directly to the interface with an access-group. Since the ACL only permitted internal LAN traffic, it blocked OSPF hello packets (protocol 89) from passing across the link. Once the ACL was removed from the interface and left only for NAT matching, OSPF adjacencies formed normally again.
+
+These troubleshooting steps helped reinforce the importance of validating routing, interface roles, and control-plane protocols when making changes to an existing network.
+
+## Key Takeaways
+This lab helped reinforce several important networking concepts:
+* Designing a multi-site network with unique subnet addressing
+* Implementing VLAN segmentation for departmental isolation
+* Using OSPF for dynamic route exchange between sites
+* Configuring NAT overload to provide internet access for private networks
+* Understanding how routing and NAT interact at the network edge
+
+Combining these features into a single topology provided a more realistic look at how enterprise networks are structured and managed.
