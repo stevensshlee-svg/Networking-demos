@@ -44,3 +44,25 @@ The HQ router acts as the network edge and performs NAT overload (PAT) to allow 
 Private address ranges from the branch VLANs are translated to the public address assigned to the HQ router's Internet interface.
 
 This allows hosts from either branch to reach the simulated external network while keeping internal IP addressing private.
+
+## Validation
+Connectivity was verified through several tests:
+* Hosts within the same VLAN can successfully communicate with each other
+* Inter-VLAN communication works through the Layer 3 switches
+* Branch networks can reach each other through OSPF
+* Internal hosts can reach the simulated Internet address through NAT
+
+## Network Design Decisions
+A few design choices were made while building the lab to keep the topology both realistic and scalable.
+
+Unique subnets per site:
+* Each branch uses different subnet ranges rather than reusing the same VLAN networks across locations. While departments are similar across branches, using unique addressing prevents overlapping networks and allows routers to properly distinguish traffic between sites.
+
+Layer 3 switching at the branch:
+* Inter-VLAN routing is performed by Layer 3 switches at each branch instead of the routers. This keeps local traffic within the branch and prevents unnecessary routing across the WAN. It also reflects how many enterprise networks operate, where distribution or access layer switches handle local routing for internal VLANs.
+
+Dynamic routing with OSPF:
+* OSPF was chosen instead of static routing to allow the network to scale more easily. If additional branch sites were added in the future, they could join the routing domain and advertise their networks without requiring manual route configuration on every router.
+
+Centralized NAT at HQ:
+* Instead of performing NAT at each branch, NAT is handled at the HQ router. This mirrors how many organizations design their networks, where branches use private addressing internally and internet access is routed through a central edge device. Centralizing NAT also simplifies management and allows all outbound traffic to be monitored or filtered at a single point.
