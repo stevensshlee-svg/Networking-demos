@@ -41,9 +41,17 @@ OSPF was implemented between the branch routers and the HQ router to automatical
 
 Each WAN link was configured as a point-to-point network, and the routers advertise their connected networks into OSPF. This allows both branch locations to learn routes to each other without relying on static routing.
 
-Using OSPF also makes the network easier to scale. Additional branch offices could be added with minimal changes to the existing routing configuration.
+Using OSPF also makes the network easier to scale. Additional branch offices could be added with minimal changes to the existing routing configuration.  
+* LA L3 Switch & LA Router OSPF neighbors  
+![LA-OSPF](images/la/la%20l3%20sw%20ospf.png)
+![LA-OSPF](images/la/la%20router%20ospf.png)
 
-![LA-OSPF](images/la/la%20l3%20switch%20ip%20configs.png)
+* NY L3 Switch & NY Router OSPF neighbors  
+![NY-OSPF](images/ny/ny%20l3%20sw%20ospf.png)
+![NY-OSPF](images/ny/ny%20router%20ospf.png)
+
+* HQ Router OSPF neighbors with LA & NY Routers  
+![HQ-OSPF](images/hq/hq%20router%20ospf%20config.png)
 
 ## Internet access with NAT
 The HQ router acts as the network edge and performs NAT overload (PAT) to allow internal clients to reach external networks.
@@ -62,13 +70,13 @@ Connectivity was verified through several tests:
 
 ![inter-vlan](images/validation/vlan%20&%20%20inter-vlan%20communication.png) 
   
-* Branch networks can reach each other through OSPF (tracert demonstrates the packet traveling between routers) 
+* Branch networks can reach each other through OSPF (tracert demonstrates the packet traveling between OSPF learned routes) 
 
 ![LA-ROUTES](images/la/la%20router%20ip%20routes.png)  
 ![NY-ROUTES](images/ny/ny%20router%20ip%20routes.png)  
 ![reaching-via-ospf](images/validation/reaching%20la%20branch%20as%20user%20IT2%20in%20ny%20branch.png)  
   
-* Internal hosts can reach the simulated Internet address through NAT
+* Internal hosts can reach the simulated Internet address (8.8.8.8) through NAT
 
 ![internet-config](images/topology&internet/internet%20ip%20config.png)  
 ![natting](images/validation/pinging%20internet%20as%20la%20branch%20sales%20user.png)  
@@ -95,7 +103,7 @@ Layer 3 switching at the branch:
 While building the topology, several issues came up that required troubleshooting.
 
 DHCP clients receiving APIPA addresses:
-* Initially hosts were receiving 169.254.x.x addresses. This was caused by missing routing between the branch router and the Layer 3 switch where the VLAN interfaces were configured. Once the proper routes were added, DHCP requests were successfully forwarded to the router.
+* Initially hosts were receiving 169.254.x.x addresses. This was caused by missing routing between the branch router and the Layer 3 switch where the VLAN interfaces were configured. Once the proper routes were added, DHCP requests were successfully forwarded from the router to the SVIs and ultimately the endhosts requesting the IP address.
 
 OSPF adjacency dropping:
 * After configuring NAT on the HQ router, the OSPF neighbor relationship between routers dropped and the dead timer eventually expired. This was caused by accidentally applying the ACL used for NAT directly to the interface with an access-group. Since the ACL only permitted internal LAN traffic, it blocked OSPF hello packets (protocol 89) from passing across the link. Once the ACL was removed from the interface and left only for NAT matching, OSPF adjacencies formed normally again.
@@ -110,4 +118,4 @@ This lab helped reinforce several important networking concepts:
 * Configuring NAT overload to provide internet access for private networks
 * Understanding how routing and NAT interact at the network edge
 
-Combining these features into a single topology provided a more realistic look at how enterprise networks are structured and managed.
+Combining these features into a single topology provided a more in-depth and realistic look at how enterprise networks are structured and managed.
