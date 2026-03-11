@@ -41,7 +41,7 @@ OSPF was implemented between the branch routers and the HQ router to automatical
 
 Each WAN link was configured as a point-to-point network, and the routers advertise their connected networks into OSPF. This allows both branch locations to learn routes to each other without relying on static routing.
 
-Using OSPF also makes the network easier to scale. Additional branch offices could be added with minimal changes to the existing routing configuration.  
+Using OSPF also makes the network easier to scale, resulting in the potential addition of branch offices with minimal changes to the existing routing configuration.  
 * LA L3 Switch & LA Router OSPF neighbors  
 ![LA-OSPF](images/la/la%20l3%20sw%20ospf.png)
 ![LA-OSPF](images/la/la%20router%20ospf.png)
