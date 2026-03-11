@@ -43,7 +43,7 @@ Each WAN link was configured as a point-to-point network, and the routers advert
 
 Using OSPF also makes the network easier to scale. Additional branch offices could be added with minimal changes to the existing routing configuration.
 
-- add image of ospf neighbor relationships -
+![LA-OSPF](images/la/la%20l3%20switch%20ip%20configs.png)
 
 ## Internet access with NAT
 The HQ router acts as the network edge and performs NAT overload (PAT) to allow internal clients to reach external networks.
