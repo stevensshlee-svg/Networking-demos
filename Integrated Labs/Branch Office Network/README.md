@@ -4,6 +4,7 @@ This lab simulates a small multi-site enterprise network with two branch offices
 The goal of this lab was to combine several networking concepts into a single environment that more closely resembles a real enterprise deployment rather than isolated configuration exercises.
 
 ## Network Topology
+![Topology](images/topology&internet/network%20topology.png)  
 The topology consists of:
 * Two Branch Sites (LA & NY)
 * Layer 3 switch at each branch for inter-VLAN routing
@@ -15,21 +16,25 @@ Each branch site connects to the HQ router through point-to-point WAN links usin
 Internet connectivity is simulated by connecting the HQ router to an external router which hosts a public test address.
 
 ## VLAN segementation
-Branch 1:
+Branch 1 (LA):
 * VLAN 10 - HR
 * VLAN 20 - IT
 * VLAN 30 - Sales
 * VLAN 40 - Servers
 
-Branch 2:
+Branch 2 (NY):
 * VLAN 50 - HR
 * VLAN 60 - IT
 * VLAN 70 - Sales
 
-Each branch office contains multiple VLANs to represent separate departments within the organization. Segmenting departments into separate VLANs helps isolate broadcast domains and reflects how organizations typically separate network traffic between teams. 
+![LA-VLAN](images/la/la%20vlans.png)
+![NY-VLAN](images/ny/ny%20vlans.png)  
 
 ## Inter-VLAN Routing
 Inter-VLAN routing is handled by the Layer 3 switches at each branch. SVIs were created for each VLAN to act as the default gateway for hosts within that network. This allows devices in different departments to communicate while maintaining logical separation between networks.
+
+![LA-SVI](images/la/la%20l3%20switch%20ip%20configs.png)  
+![NY-SVI](images/ny/ny%20l3%20switch%20ip%20configs.png)  
 
 ## Dynamic Routing with OSPF
 OSPF was implemented between the branch routers and the HQ router to automatically exchange routing information.
@@ -38,19 +43,35 @@ Each WAN link was configured as a point-to-point network, and the routers advert
 
 Using OSPF also makes the network easier to scale. Additional branch offices could be added with minimal changes to the existing routing configuration.
 
+- add image of ospf neighbor relationships -
+
 ## Internet access with NAT
 The HQ router acts as the network edge and performs NAT overload (PAT) to allow internal clients to reach external networks.
 
 Private address ranges from the branch VLANs are translated to the public address assigned to the HQ router's Internet interface.
 
+![NAT](images/validation/nat%20translation%20of%20la%20branch%20sales%20user%20inside%20to%20outside%20ip.png)  
+
 This allows hosts from either branch to reach the simulated external network while keeping internal IP addressing private.
 
 ## Validation
 Connectivity was verified through several tests:
-* Hosts within the same VLAN can successfully communicate with each other
+* Hosts within the same VLAN can successfully communicate with each other (HR VLAN ip addressing: 192.168.10.x for LA branch & 192.168.50.x for NY branch) 
+
 * Inter-VLAN communication works through the Layer 3 switches
-* Branch networks can reach each other through OSPF
+
+![inter-vlan](images/validation/vlan%20&%20%20inter-vlan%20communication.png) 
+  
+* Branch networks can reach each other through OSPF (tracert demonstrates the packet traveling between routers) 
+
+![LA-ROUTES](images/la/la%20router%20ip%20routes.png)  
+![NY-ROUTES](images/ny/ny%20router%20ip%20routes.png)  
+![reaching-via-ospf](images/validation/reaching%20la%20branch%20as%20user%20IT2%20in%20ny%20branch.png)  
+  
 * Internal hosts can reach the simulated Internet address through NAT
+
+![internet-config](images/topology&internet/internet%20ip%20config.png)  
+![natting](images/validation/pinging%20internet%20as%20la%20branch%20sales%20user.png)  
 
 ## Network Design Decisions
 A few design choices were made while building the lab to keep the topology both realistic and scalable.
