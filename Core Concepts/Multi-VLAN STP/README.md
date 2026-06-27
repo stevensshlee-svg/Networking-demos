@@ -51,5 +51,5 @@ Comparing 'do show spanning-tree vlan 10' on VLAN 10's root bridge (SW1) against
 
 
 ## Observations and Lessons Learned
-- Initial failover test appeared as SW4 wasn't showing as root immediately after shutting down SW1's links. However, this wasn't due to a misconfiguration in STP. This was a result of STP's Max Age time of 20 seconds and Listening/Learning state transitions of 15 seconds each during the convergence process. Given the time these processes take, it takes roughly 50 seconds to a minute for the secondary root bridge to fully take over.
-- While 50 to 60 seconds may seem minusule, in an enterprise environment that downtime could have significant impact on a business operation. The convergence process of pvst really highlights the direct motivation for Rapid-pvst implementation in enterprise environments.
+Initial failover test appeared as SW4 wasn't showing as root immediately after shutting down SW1's links. However, this wasn't due to a misconfiguration in STP. This was a result of STP's Max Age time of 20 seconds and Listening/Learning state transitions of 15 seconds each during the convergence process. Given the time these processes take, it takes roughly 50 seconds to a minute for the secondary root bridge to fully take over.
+While 50 to 60 seconds may seem minusule, in an enterprise environment that downtime could have significant impact on a business operations. The convergence process of pvst really highlights the direct motivation for Rapid-pvst implementation in enterprise environments.
