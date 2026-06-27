@@ -38,7 +38,6 @@ This lab aims to demonstrate my knowledge and ability to configure and verify ST
 
 ### Port role valiation per VLAN
 Comparing 'do show spanning-tree vlan 10' on VLAN 10's root bridge (SW1) against 'do show spanning-tree vlan 30' on VLAN 30's root bridge (SW2) shows different port states. This confirms that each VLAN runs its own independent STP instances.
-add image
 ![topology](images/SW1_vlan10and20.png)
 ![topology](images/SW2_vlan30and40.png)
 
