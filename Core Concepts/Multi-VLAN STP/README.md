@@ -43,7 +43,7 @@ Comparing 'do show spanning-tree vlan 10' on VLAN 10's root bridge (SW1) against
 
 ### Failover Test for VLAN 10
 1. Shut down all links to SW1
-2. Observed converggence delay of approximately 50 seconds before the secondary root, SW4, took over as root bridge for VLAN 10
+2. Observed convergence delay of approximately 50 seconds before the secondary root, SW4, took over as root bridge for VLAN 10
 3. Validated SW4's convergence via the output from 'do show spanning-tree vlan 10' on SW4
 4. Re-enabled links to SW1, causing SW1 to reclaim root bridge after reconvergence due to its lower priority
 ![topology](images/disable_link.png)
