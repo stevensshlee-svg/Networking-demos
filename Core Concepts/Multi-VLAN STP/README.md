@@ -23,6 +23,7 @@ This lab aims to demonstrate my knowledge and ability to configure and verify ST
 - Ran 'vtp domain stp_demo', 'vtp password stp', 'vtp version 2', and 'vtp mode client' on SW2 - 4 to appoint vtp clients
 - A VTP server/client relationship was created to allow VLAN creations such as VLAN 10 - 50 to propagate across all switches
 ![topology](images/vtp-config.png)
+![topology](images/SW2-vtp.png)
 
 ### STP
 - Ran 'spanning-tree mode pvst' to configure per-VLAN spanning tree on all switches
