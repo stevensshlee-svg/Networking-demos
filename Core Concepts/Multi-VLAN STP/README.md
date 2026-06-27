@@ -4,7 +4,7 @@
 This lab aims to demonstrate my knowledge and ability to configure and verify STP functionality within a multi-VLAN pvst environment. I will be configuring different primary and secondary root bridges based on the VLAN, verifying port role changes across VLANs, and testing failover behavior when a root bridge fails. 
 
 ## Topology
- add image
+![topology](images/stp.png)
 - 4 Switches in a full mesh
 - SW1 in VTP server mode and SW2 - 4 as client mode
 - SW1 as the root bridge for VLAN 10, 20
