@@ -15,7 +15,7 @@ This lab aims to demonstrate my knowledge and ability to configure and verify ST
 ## Configurations and why
 
 ### Trunk Links
-- Ran 'interface range e0/0 - 3' followed by 'switchport trunk encapsulation dot1q' and 'switchport mode trunk' to configure the trunk links encapsulation type to the open source standard Dot1q and to configure each links operational mode as a trunk link. I've repeated this on all switches. This change is needed to allow vtp messages to be sent between switches. 
+- Ran 'interface range e0/0 - 3' followed by 'switchport trunk encapsulation dot1q' and 'switchport mode trunk' to configure the trunk links encapsulation type to the open standard Dot1q and to configure each links operational mode as a trunk link. I've repeated this on all switches. This change is needed to allow vtp messages to be sent between switches. 
 
 ### VTP
 - Ran 'vtp domain stp_demo', 'vtp password stp', 'vtp version 2', and 'vtp mode server' on SW1 to create a vtp domain and appoint a vtp server
