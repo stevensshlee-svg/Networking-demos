@@ -24,10 +24,10 @@ This lab aims to demonstrate my knowledge and ability to configure and verify ST
 
 ### STP
 - Ran 'spanning-tree mode pvst' to configure per-VLAN spanning tree on all switches
-- Ran 'spanning-tree vlan 10 root primary' and 'spanning-tree vlan 20 root primary' on SW1 to elect SW1 as the root bridge for vlan 10 and 20
-- Ran 'spanning-tree vlan 30 root primary' and 'spanning-tree vlan 40 root primary' on SW2 to elect SW2 as the root bridge for vlan 30 and 40
-- Ran 'spanning-tree vlan 50 root primary' on SW3 to elect SW3 as the root bridge for VLAN 50
-- Ran 'spanning-tree vlan 10 root secondary' 'spanning-tree vlan 20 root secondary' 'spanning-tree vlan 30 root secondary' 'spanning-tree vlan 40 root secondary' 'spanning-tree vlan 50 root secondary' on SW4 to elect SW4 as the secondary (failover) root bridge for each VLAN
+- Ran 'spanning-tree vlan 10 priority 4096' and 'spanning-tree vlan 20 priority 4096' on SW1 to elect SW1 as the root bridge for vlan 10 and 20
+- Ran 'spanning-tree vlan 30 priority 4096' and 'spanning-tree vlan 40 priority 4096' on SW2 to elect SW2 as the root bridge for vlan 30 and 40
+- Ran 'spanning-tree vlan 50 priority 4096' on SW3 to elect SW3 as the root bridge for VLAN 50
+- Ran 'spanning-tree vlan 10 priority 8192' 'spanning-tree vlan 20 priority 8192' 'spanning-tree vlan 30 priority 8192' 'spanning-tree vlan 40 priority 8192' 'spanning-tree vlan 50 priority 8192' on SW4 to elect SW4 as the secondary (failover) root bridge for each VLAN
 
 ## Validation of proper STP port roles per VLAN
 
