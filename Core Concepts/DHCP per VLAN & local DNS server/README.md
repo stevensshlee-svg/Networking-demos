@@ -58,7 +58,7 @@ Simulated an enterprise network topology using a Layer-3 switch for inter-VLAN r
 * IT2 received 192.168.2.101/24, gateway 192.168.2.3, DNS 192.168.1.2
 * All clients received correct per-VLAN gateway confirming DHCP relay forwarded requests to the correct pool  
 ![topology](images/user_lease_validation.png)
-![topology](images/user1_lease_validation_p2.png)
+![topology](images/user1_lease_validation_p2.png)  
 ![topology](images/IT_lease_validation_p1.png)
 ![topology](images/IT2_lease_validation.png)
 
