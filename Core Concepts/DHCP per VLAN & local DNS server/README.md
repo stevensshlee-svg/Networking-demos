@@ -36,7 +36,7 @@ Simulated an enterprise network topology using a Layer-3 switch for inter-VLAN r
 
 ### Routing
 * Configured 10.0.0.2/30 on Gi0/0 as the uplink to the L3 switch
-* Added static routes for 192.168.1.0/24 and 192.168.2.0/24 via 10.0.0.1 so the router knows how to return DHCP offers and DNS responses back to clients in each VLAN. Without these routes, DHCP relay responses would have no return path.  
+* Added static routes for 192.168.1.0/24 and 192.168.2.0/24 via 10.0.0.1 so the router knows how to return DHCP offers and DNS responses back to clients in each VLAN. Without these routes DHCP relay responses would have no return path.  
 ![topology](images/interface_route_config.png)
 
 ### DNS
