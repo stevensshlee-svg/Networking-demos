@@ -63,5 +63,6 @@ Simulated an enterprise network topology using a Layer-3 switch for inter-VLAN r
 ![topology](images/IT2_lease_validation.png)
 
 ## Observations
+* The TTL difference between same-VLAN pings (TTL 128) and cross-VLAN pings (TTL 127) directly confirms where routing occurs. Each L3 hop decrements TTL by 1, making the routing boundary visible in the ping output
 * DHCP relay enables centralized DHCP in a multi-VLAN environment because without it each VLAN would require its own local DHCP server
 * Inter-VLAN routing at the L3 switch keeps local inter-VLAN traffic off the router reducing upstream traffic
