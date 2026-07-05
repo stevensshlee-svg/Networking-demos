@@ -1,24 +1,36 @@
 # Static routing between LANs
-Configuring Inter-LAN connectivity using static routing
+Configuring Inter-LAN connectivity via manually configured static routing on Cisco Packet Tracer
 
 ## Overview
-Built a two-router topology to demonstrate Layer 3 routing between separate LANs using manually configured static routes
+Built a two-site topology simulating a Los Angeles and New York office connected over a point-to-point WAN link. Demonstrated Layer 3 routing between separate LANs using manually configured static routes and validated end-to-end connectivity using ping and traceroute.
 
-## Networks
+## Topology and Networks
 * LAN A (Los Angeles): 192.168.10.0/24
 * LAN B (New York): 192.168.20.0/24
 * WAN Link: 10.0.0.0/30
 
-## Key Tasks
-* Configured DHCP on each router to provide end host connectivity within each LAN
-* Configured router interfaces and WAN point-to-point link
-* Created static routes to each LAN
-* Validated packet flow using ping and tracert
+## Configurations and Why
 
-## Screenshots
-<img width="834" height="488" alt="network topology" src="https://github.com/user-attachments/assets/28f25f8b-bbc6-4dcc-81a1-50459da115f7" />
-<img width="695" height="703" alt="LA dhcp" src="https://github.com/user-attachments/assets/2093063b-7eab-434e-935c-6d27a17882d5" />
-<img width="695" height="698" alt="LA router config" src="https://github.com/user-attachments/assets/c1edfc5d-002f-45ec-81fa-21252285ddf6" />
-<img width="692" height="699" alt="newyork dhcp" src="https://github.com/user-attachments/assets/69825fcd-dc41-421e-9abc-cde98e117bc9" />
-<img width="689" height="702" alt="newyork router config" src="https://github.com/user-attachments/assets/4b1740bc-0d20-490c-8b94-7e33c52f6174" />
-<img width="690" height="701" alt="ping tracert test" src="https://github.com/user-attachments/assets/d549d07e-410d-4d58-ae09-ae4c365a3858" />
+### Router Interfaces
+* Configured LAN-facing interfaces as default gateways for each site's end hosts
+* Configured WAN-facing interfaces with a /30 point-to-point subnet (a /30 provides exactly 2 usable host addresses which is the minimum needed for a router-to-router link) conserving IP address space
+
+### DHCP
+* Configured local DHCP pools on each router to automatically assign IPs to end hosts within each site
+* LA pool: network 192.168.10.0/24 and gateway 192.168.10.1
+* NY pool: network 192.168.20.0/24 and gateway 192.168.20.1
+* Excluded .1 through .10 on each router to reserve addresses for infrastructure use
+
+### Static Routes
+* LosAngelesRouter: 'ip route 192.168.20.0 255.255.255.0 10.0.0.2' (routes NY-bound traffic toward NewYorkRouter)
+* NewYorkRouter: 'ip route 192.168.10.0 255.255.255.0 10.0.0.1' (routes LA-bound traffic toward LosAngelesRouter)
+
+## Validation
+
+### Ping Test
+* PC0 (LA, 192.168.10.x) successfully pinged PC2 (NY, 192.168.20.12) confirming end-to-end inter-LAN communication via static routes
+
+## Observations
+* Initial ping showed 50% packet loss (2 of 4 packets timed out) before recovering. This is caused by an ARP resolution delay on first contact. During this time the router must ARP for the next hop MAC address before forwarding the first packet, causing the initial timeout. The following packets succeed immediately once the ARP table is populated.
+* The traceroute hop count and IP addresses confirm traffic is following the correct path through the WAN link
+* Static routing requires manual configuration on both routers. Each router only knows about the other's LAN through the explicitly configured static route. Removing either route breaks connectivity in one direction while the other direction remains functional, highlighting the non-symmetric nature in static route configurations
