@@ -9,6 +9,8 @@ Implemented VLAN-based network segmentation to isolate department traffic and en
 * 1 Router
 * 1 Switch
 * 4 End Hosts (User 1 & 2 in VLAN 10 / IT 1 & 2 in VLAN 20)
+* User 1 IP Addr.: 192.168.10.2 / User 2 IP Addr.: 192.168.10.3
+* IT 1 IP Addr.: 192.168.20.2 / IT 2 IP Addr.: 192.168.20.3
 * VLAN 10: Users - 192.168.10.0/24
 * VLAN 20: IT - 192.168.20.0/24
 * Native VLAN - 192.168.99.1/24  
