@@ -35,7 +35,7 @@ Built a two-site topology simulating a Los Angeles and New York office connected
 
 ### Ping Test
 * PC0 (LA, 192.168.10.x) successfully pinged PC2 (NY, 192.168.20.12) confirming end-to-end inter-LAN communication via static routes  
-![topology](imageslan_connectivity.png)
+![topology](images/lan_connectivity.png)
 
 ## Observations
 * Initial ping showed 50% packet loss (2 of 4 packets timed out) before recovering. This is caused by an ARP resolution delay on first contact. During this time the router must ARP for the next hop MAC address before forwarding the first packet, causing the initial timeout. The following packets succeed immediately once the ARP table is populated.
