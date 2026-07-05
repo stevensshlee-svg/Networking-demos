@@ -8,7 +8,7 @@ Designed and implemented a simple single-LAN network to demonstrate foundational
 Devices
 * 1 Router
 * 1 Switch
-* 3 End Hosts
+* 3 End Hosts  
 ![topology](images/basic_dhcp_topology.png)
 
 ## Key Tasks
@@ -22,13 +22,13 @@ Devices
 * Excluded Address: 192.168.1.1 - 192.168.1.10
 * Default-router: 192.168.1.1
 * DNS-Server: 1.1.1.1
-* Domain-name: test.lab
+* Domain-name: test.lab  
 ![topology](images/dhcp_pool_conf.png)
 
 ## Validation
 * All three PCs received IPS from the pool (192.168.1.11 - 192.168.1.13)
 * DHCP server, default gateway, and DNS server confirmed via ipconfig /all
-![topology](images/dhcp_Validation.png)
+![topology](images/dhcp_validation.png)
 ![topology](images/PC1_DHCP_Validation.png)
 ![topology](images/PC2_DHCP_Validation.png)
 * PC0 successfully pinged PC1 (192.168.1.12), PC2 (192.168.1.11), and the default gateway (192.168.1.1) with 0% packet loss
