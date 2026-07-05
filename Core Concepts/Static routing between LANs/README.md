@@ -7,28 +7,35 @@ Built a two-site topology simulating a Los Angeles and New York office connected
 ## Topology and Networks
 * LAN A (Los Angeles): 192.168.10.0/24
 * LAN B (New York): 192.168.20.0/24
-* WAN Link: 10.0.0.0/30
+* WAN Link: 10.0.0.0/30  
+![topology](images/static_route_topology.png)
 
 ## Configurations and Why
 
 ### Router Interfaces
 * Configured LAN-facing interfaces as default gateways for each site's end hosts
-* Configured WAN-facing interfaces with a /30 point-to-point subnet (a /30 provides exactly 2 usable host addresses which is the minimum needed for a router-to-router link) conserving IP address space
-
-### DHCP
-* Configured local DHCP pools on each router to automatically assign IPs to end hosts within each site
-* LA pool: network 192.168.10.0/24 and gateway 192.168.10.1
-* NY pool: network 192.168.20.0/24 and gateway 192.168.20.1
-* Excluded .1 through .10 on each router to reserve addresses for infrastructure use
+* Configured WAN-facing interfaces with a /30 point-to-point subnet (a /30 provides exactly 2 usable host addresses which is the minimum needed for a router-to-router link) conserving IP address space  
+![topology](images/LA_router_config_p2.png)
+![topology](images/NY_router_config_p2.png)
 
 ### Static Routes
 * LosAngelesRouter: 'ip route 192.168.20.0 255.255.255.0 10.0.0.2' (routes NY-bound traffic toward NewYorkRouter)
 * NewYorkRouter: 'ip route 192.168.10.0 255.255.255.0 10.0.0.1' (routes LA-bound traffic toward LosAngelesRouter)
 
+### DHCP
+* Configured local DHCP pools on each router to automatically assign IPs to end hosts within each site
+* LA pool: network 192.168.10.0/24 and gateway 192.168.10.1
+* NY pool: network 192.168.20.0/24 and gateway 192.168.20.1
+* Excluded .1 through .10 on each router to reserve addresses for infrastructure use  
+![topology](images/LA_router_config.png)
+![topology](images/NY_router_config.png)
+
+
 ## Validation
 
 ### Ping Test
-* PC0 (LA, 192.168.10.x) successfully pinged PC2 (NY, 192.168.20.12) confirming end-to-end inter-LAN communication via static routes
+* PC0 (LA, 192.168.10.x) successfully pinged PC2 (NY, 192.168.20.12) confirming end-to-end inter-LAN communication via static routes  
+![topology](imageslan_connectivity.png)
 
 ## Observations
 * Initial ping showed 50% packet loss (2 of 4 packets timed out) before recovering. This is caused by an ARP resolution delay on first contact. During this time the router must ARP for the next hop MAC address before forwarding the first packet, causing the initial timeout. The following packets succeed immediately once the ARP table is populated.
