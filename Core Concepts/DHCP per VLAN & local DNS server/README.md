@@ -24,8 +24,8 @@ Simulated an enterprise network topology using a Layer-3 switch for inter-VLAN r
 * Configured 'ip helper-address 10.0.0.2' on each SVI to forward DHCP broadcast requests to the centralized router across VLAN boundaries
 * Configured Fa0/6 as a router port via 'no switchport' with an IP of 10.0.0.1/30 for the point-to-point uplink to the router
 * Added a default route 0.0.0.0/0 via 10.0.0.2 so the switch can forward any traffic it cannot route locally  
-![topology](images/L#_sw_conf.png)
-![topology](images/L#_sw_conf_p1.png)
+![topology](images/L3_sw_conf.png)
+![topology](images/L3_sw_conf_p1.png)
 
 ### DHCP Services
 * Created separate DHCP pools per VLAN with correct network, default gateway (SVI IP), DNS server, and domain name
