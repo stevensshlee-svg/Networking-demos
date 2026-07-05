@@ -59,7 +59,7 @@ Simulated an enterprise network topology using a Layer-3 switch for inter-VLAN r
 * All clients received correct per-VLAN gateway confirming DHCP relay forwarded requests to the correct pool  
 ![topology](images/user_lease_validation.png)
 ![topology](images/user1_lease_validation_p2.png)
-![topology](images/IT_lease_validaition_p1.png)
+![topology](images/IT_lease_validaiton_p1.png)
 ![topology](images/IT2_lease_validation.png)
 
 ## Observations
