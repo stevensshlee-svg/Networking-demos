@@ -11,24 +11,28 @@ Implemented VLAN-based network segmentation to isolate department traffic and en
 * 4 End Hosts (User 1 & 2 in VLAN 10 / IT 1 & 2 in VLAN 20)
 * VLAN 10: Users - 192.168.10.0/24
 * VLAN 20: IT - 192.168.20.0/24
-* Native VLAN - 192.168.99.1/24
+* Native VLAN - 192.168.99.1/24  
+![topology](images/topology.png)
 
 ## Configurations and Why
 
 ### Switch: VLAN and Acess Ports
 * Created VLAN 10 (Users) and VLAN 20 (IT) in the VLAN database
 * Assigned Fa0/1 and Fa0/3 as access ports for VLAN 10
-* Assigned Fa0/2 and Fa0/4 as access ports for VLAN 20
+* Assigned Fa0/2 and Fa0/4 as access ports for VLAN 20  
+![topology](images/vlans.png)
 
 ### Switch: Trunk Port Configuration
 * Configured Fa0/5 as an 802.1Q trunk to carry tagged VLAN 10 and VLAN 20 traffic to the router on a single physical link
 * Native VLAN changed from default VLAN 1 to unused VLAN 999 as a security hardening measure. VLAN 1 is the default native VLAN on all Cisco switches and is a known attack vector for VLAN hopping attacks. Moving the native VLAN to an unused, unpopulated VLAN reduces the possibility of an attack to use this risk
-* 'switchport nonegotiate' disables DTP (Dynamic Trunking Protocol) on the trunk port. DTP allows switches to automatically negotiate trunk formation, which can be exploited to trunk a rogue switch into the network. Disabling DTP prevents unauthorized trunk negotiation of rogue switches. 
+* 'switchport nonegotiate' disables DTP (Dynamic Trunking Protocol) on the trunk port. DTP allows switches to automatically negotiate trunk formation, which can be exploited to trunk a rogue switch into the network. Disabling DTP prevents unauthorized trunk negotiation of rogue switches.  
+![topology](images/interface_configs.png)
 
 ### Router: Subinterfaces
 * The physical interface Gi0/0 has no IP address. All addressing is handled at the subinterface level. Assigning an IP to the physical interface while also configuring subinterfaces is a common misconfiguration that causes routing issues.
 * Each subinterface uses 'encapsulation dot1Q <vlan-id>' to associate it with a specific VLAN tag. Incoming tagged frames are then matched to the correct subinterface and routed accordingly.
-* The native VLAN subinterface uses the native keyword to handle untagged frames arriving on the trunk, matching the native VLAN 999 configured on the switch trunk port. Both sides must agree on the native VLAN or a native VLAN mismatch occurs and untagged traffic is mishandled
+* The native VLAN subinterface uses the native keyword to handle untagged frames arriving on the trunk, matching the native VLAN 999 configured on the switch trunk port. Both sides must agree on the native VLAN or a native VLAN mismatch occurs and untagged traffic is mishandled  
+![topology](images/ROAS_config.png)
 
 ## Validation
 
