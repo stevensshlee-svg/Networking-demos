@@ -41,7 +41,8 @@ Implemented VLAN-based network segmentation to isolate department traffic and en
   Fa0/1, Fa0/3 and VLAN 20 IS active on Fa0/2, Fa0/4
 
 ### Inter-VLAN Connectivity
-* User 1 can successfully ping IT 1 across VLAN 10
+* User 1 can successfully ping IT 1 across VLAN 10  
+![topology](images/inter-vlan_validation.png)
 
 ## Observations
 * Router on a Stick is a cost-effective inter-VLAN routing solution for small networks. A single physical uplink carries all VLAN traffic, eliminating the need for a Layer 3 switch. The tradeoff is that all inter-VLAN traffic must traverse the single trunk link, which can become a bandwidth bottleneck in a larger environment.
