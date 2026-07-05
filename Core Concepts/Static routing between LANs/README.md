@@ -19,8 +19,8 @@ Built a two-site topology simulating a Los Angeles and New York office connected
 ![topology](images/NY_router_config_p2.png)
 
 ### Static Routes
-* LosAngelesRouter: 'ip route 192.168.20.0 255.255.255.0 10.0.0.2' (routes NY-bound traffic toward NewYorkRouter)
-* NewYorkRouter: 'ip route 192.168.10.0 255.255.255.0 10.0.0.1' (routes LA-bound traffic toward LosAngelesRouter)
+* On LosAngelesRouter I ran 'ip route 192.168.20.0 255.255.255.0 10.0.0.2' to be able to route NY-bound traffic toward NewYorkRouter
+* On NewYorkRouter I ran 'ip route 192.168.10.0 255.255.255.0 10.0.0.1' to be able to route LA-bound traffic toward LosAngelesRouter
 
 ### DHCP
 * Configured local DHCP pools on each router to automatically assign IPs to end hosts within each site
